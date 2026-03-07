@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OP</title>
+  <meta name="description" content="OP 的第一版起始页。" />
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg2: #0d1b2f;
+      --card: rgba(255,255,255,.08);
+      --text: #ecf3ff;
+      --muted: #aac1e6;
+      --line: rgba(255,255,255,.12);
+      --accent: #71b7ff;
+      --accent2: #8d7bff;
+      --good: #89f0b6;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: Inter, "Microsoft YaHei", system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(113,183,255,.20), transparent 32%),
+        radial-gradient(circle at right, rgba(141,123,255,.18), transparent 28%),
+        linear-gradient(160deg, var(--bg), var(--bg2));
+      min-height: 100vh;
+    }
+    .wrap {
+      width: min(1120px, calc(100vw - 32px));
+      margin: 0 auto;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0;
+    }
+    .brand {
+      font-weight: 900;
+      font-size: 24px;
+      letter-spacing: .08em;
+    }
+    .badge {
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255,255,255,.04);
+      font-size: 13px;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 28px;
+      align-items: center;
+      padding: 36px 0 20px;
+    }
+    .hero h1 {
+      margin: 0 0 18px;
+      font-size: clamp(40px, 7vw, 78px);
+      line-height: .95;
+      letter-spacing: -.04em;
+    }
+    .hero p {
+      margin: 0 0 26px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 640px;
+    }
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 18px;
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      font-weight: 700;
+    }
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border: none;
+      color: #08111f;
+    }
+    .panel {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 24px;
+      padding: 24px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 60px rgba(0,0,0,.25);
+    }
+    .terminal {
+      min-height: 320px;
+    }
+    .terminal .top {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .r { background: #ff6b6b; }
+    .y { background: #ffd166; }
+    .g { background: #7ae582; }
+    .code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #d8e8ff;
+      white-space: pre-wrap;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding: 28px 0 70px;
+    }
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .list {
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+    }
+    .list li { margin: 10px 0; }
+    .list li::before { content: "✓ "; color: var(--good); }
+    .foot {
+      border-top: 1px solid var(--line);
+      padding: 18px 0 30px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 900px) {
+      .hero, .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">OP</div>
+      <div class="badge">第一版起点</div>
+    </div>
+
+    <section class="hero">
+      <div>
+        <h1>先把空项目，
+          变成一个像样的开始。</h1>
+        <p>
+          这是 OP 的第一版首页。没有堆复杂功能，先把项目的气质、结构和继续迭代的方向立起来。
+          从 0 到 1，最重要的不是“做很多”，而是先做对第一个版本。
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/lysanagary-cpu/op" target="_blank" rel="noreferrer">查看仓库</a>
+          <a class="btn" href="#features">看第一版内容</a>
+        </div>
+      </div>
+
+      <div class="panel terminal">
+        <div class="top">
+          <div class="dot r"></div>
+          <div class="dot y"></div>
+          <div class="dot g"></div>
+        </div>
+        <div class="code">$ project init op
+&gt; creating clean landing page
+&gt; writing first README
+&gt; setting direction for future features
+&gt; status: ready to grow
+
+next:
+- 补充品牌方向
+- 接入真实功能
+- 继续做文档和页面
+- 再决定产品形态</div>
+      </div>
+    </section>
+
+    <section id="features" class="grid">
+      <div class="panel card">
+        <h3>清晰起点</h3>
+        <p>先把项目从“空仓库”变成“有脸面、有结构、有方向”的第一版。</p>
+      </div>
+      <div class="panel card">
+        <h3>可继续扩展</h3>
+        <p>当前是纯静态页，后续可以很容易接 React、Vue、Next.js 或任意后端服务。</p>
+      </div>
+      <div class="panel card">
+        <h3>适合迭代</h3>
+        <p>README 和首页一起起步，方便后面继续填功能，而不是每次都从空白开始。</p>
+      </div>
+      <div class="panel card" style="grid-column: span 3;">
+        <h3>第一版包含什么</h3>
+        <ul class="list">
+          <li>一个简洁的项目首页</li>
+          <li>一个说明项目方向的 README</li>
+          <li>一个适合继续加东西的基础骨架</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="foot">OP · v0 起步页</div>
+  </div>
+</body>
+</html>
